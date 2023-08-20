@@ -1,14 +1,11 @@
-p1, c1, p2, c2 = map(int, input('').split())
+p1, c1, p2, c2 = map(int, input().split())
 
-cal1 = p1 * c1
-cal2 = p2 * c2
+esquerdo = p1 * c1
+direito = p2 * c2
 
-
-if cal1 == cal2:
+if (esquerdo) == (direito):
     print(0)
-
-elif cal1 > cal2:
+elif esquerdo > direito:
     print(-1)
-
 else: 
     print(1)
