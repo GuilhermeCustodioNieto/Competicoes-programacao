@@ -45,8 +45,9 @@ public class estoque{
 
         for(int i=0; i<= quantidadePedidos - 1; i++){
             int linhaVendida = scan.nextInt(), colunaVendida = scan.nextInt();
-            if(estoque[linhaVendida - 1][colunaVendida - 1] != 0){
-                estoque[linhaVendida - 1][colunaVendida - 1] -= 1;
+            if(estoque[linhaVendida - 1][colunaVendida -1] != 0){
+                estoque[linhaVendida -1][colunaVendida-1] -= 1;
+                quantidadeVendidos++;
             }
 
         }
@@ -56,15 +57,4 @@ public class estoque{
 
         }
 
-
-
-        public static void imprimeVetor(int[][] estoque, int quantidadeTipo, int quantidadeTamanho){
-            for(int i=0; i<=quantidadeTipo-1; i++){
-                System.out.print('[');
-                for(int j=0; j<=quantidadeTamanho-1; j++){
-                    System.out.print(estoque[i][j] + ", ");
-                }
-                System.out.println(']');
-            }
-        }
 }
