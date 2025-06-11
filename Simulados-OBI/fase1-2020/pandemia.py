@@ -5,31 +5,18 @@
 
 totalDeAmigos, totalReunioes = map(int, input().split())
 numAmigoInfectado, primeiraReuniaoInfectado = map(int, input().split())
+infectados = set([numAmigoInfectado])
 reunioes = []
 
-
-for i in range(0, totalReunioes):
-    reunioes.append(list(map(int, input().split())))
-    reunioes[-1].pop(0)
-
-infectados = [numAmigoInfectado]
-def merge(array1, array2):
-    finalArray = []
-    for i in array1:
-        if i not in finalArray: finalArray.append(i)
-    for i in array2:
-        if i not in finalArray: finalArray.append(i)
-    return finalArray
+for _ in range(totalReunioes):
+    dados = list(map(int, input().split()))
+    participantes = dados[1:]
+    reunioes.append(participantes)
 
 for i in range(primeiraReuniaoInfectado - 1, totalReunioes):
-    participantesDaReuniao = reunioes[i]
-    
-    for p in participantesDaReuniao:
-        if p in infectados:
-            infectados = merge(infectados, participantesDaReuniao)
+    participantes = reunioes[i]
 
-
+    if any(p in infectados for p in participantes):
+        infectados.update(participantes)
 
 print(len(infectados))
-    
-    
